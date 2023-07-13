@@ -16,14 +16,15 @@ public class Update_detail {
 		 String filePath = ".\\DataFile\\Employe1.xlsx";
 		 try {	
 	    		FileInputStream inputstream = new FileInputStream(filePath);
-	    		XSSFWorkbook workbook = new XSSFWorkbook(inputstream); // access the file
-	    		XSSFSheet sheet = workbook.getSheet("Sheet1");
+	    		XSSFWorkbook workbook = new XSSFWorkbook(inputstream); // Access the file
+	    		XSSFSheet sheet = workbook.getSheet("Sheet1"); // Select the first sheet.
 
 	            for (Row row : sheet) {
-	                Cell nameCell = row.getCell(0);
-	                Cell empidcell = row.getCell(1);
-	                Cell designationCell = row.getCell(2);
-	               
+	                Cell nameCell = row.getCell(0);  // Get the name.
+	                Cell empidcell = row.getCell(1); // Get Empid.
+	                Cell designationCell = row.getCell(2); // Get the designation.
+
+					// Compare if the name and empid is match then update the designation.
 	                if (nameCell != null && nameCell.getStringCellValue().equals(nameToFind) && empidcell.getStringCellValue().equals(empId)) {
 	                    designationCell.setCellValue(newDesignation);
 	                    break;
@@ -33,8 +34,8 @@ public class Update_detail {
 	            inputstream.close();
 
 	            FileOutputStream outFile = new FileOutputStream(filePath);
-	            workbook.write(outFile);
-	            outFile.close();
+	            workbook.write(outFile);  // Write the data in sheet.
+	            outFile.close(); // Close the sheet.
 
 	            System.out.println("Designation updated successfully.");
 	        } catch (Exception e) {
