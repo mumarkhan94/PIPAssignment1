@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Patter_match {
 	
 	public static void main(String[] args) {
+		// Take the input from user.
 		Scanner scanner = new Scanner(System.in);
-
 		System.out.print("Enter a 10-digit phone number: ");
 		String phoneNumber = scanner.nextLine();
 
@@ -21,7 +21,7 @@ public class Patter_match {
 
 	public static void validatePhoneNumber(String number) throws IllegalArgumentException {
 		// Check if the phone number matches the specified conditions using regular
-		// expressions
+		// Regex expressions
 		if (!number.matches("[0-9]{10}")) {
 			throw new IllegalArgumentException("Phone number should have exactly 10 digits.");
 		}
