@@ -9,7 +9,7 @@ public class Find_non_repeating_integer {
 
 	         // Check if the current element appears elsewhere in the array
 	            for (int j = 0; j < arr.length; j++) {
-	                if (i != j && current == arr[j]) { // i != j is use because i don't compare same index.
+	                if (i != j && current == arr[j]) { // i != j is use because i don't want to compare same index.
 	                    isRepeating = true;
 	                    break;
 	                }
