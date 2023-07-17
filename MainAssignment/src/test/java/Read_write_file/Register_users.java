@@ -11,10 +11,11 @@ import org.apache.poi.xssf.usermodel.*;
 
 import com.opencsv.CSVWriter;
 public class Register_users {
+    Scanner scanner = new Scanner(System.in);
 
-    public static void Enterdata(Object[][] empdata) throws IOException {
+    public static void Enterdata(Object[][] empdata,File myFile) throws IOException {
 
-        File myFile = new File(".\\DataFile\\Login_details.xlsx");
+
         FileInputStream inputStream = new FileInputStream(myFile);  // Select the file.
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
         System.out.println(" wb: " + workbook);
@@ -43,8 +44,8 @@ public class Register_users {
         System.out.println("Data inserted");
     }
 
-    public void fill_data() throws IOException {
-        Scanner scanner = new Scanner(System.in);
+    public void registerUser() throws IOException {
+        File myFile = new File(".\\DataFile\\Login_details.xlsx");
         String[] askusers = {"Username", "Password", "Select your role"};
         Object[][] arr = new Object[1][3]; //Object of array variable.
         for (int i = 0; i < 1; i++) {
@@ -77,7 +78,31 @@ public class Register_users {
                 }
             }
         }
-        Enterdata(arr); // Calling function and passing object of array.
+        Enterdata(arr,myFile); // Calling function and passing object of array.
+    }
+
+
+    public void Enter_book_detail() throws IOException {
+        File myFile = new File(".\\DataFile\\Book_details.xlsx");
+        int rows = 1;
+        int columns = 5;
+        Object[][] arr = new Object[rows][columns];
+        String[] cell_name = {"Book title", "Author Name", "ISBN", "Genre", "Availability status"};
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("Enter "+ cell_name[j]);
+                arr[i][j] = scanner.next(); // Enter the data and storing the data in object of array.
+            }
+        }
+        // Print the data enter by user.
+        System.out.println("The data entered is:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        Enterdata(arr,myFile); // Calling function and passing object of array.
     }
 
 }

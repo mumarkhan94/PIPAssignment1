@@ -1,6 +1,10 @@
 package Utility_package_for_comman_use;
 
 
+import Read_write_file.Register_users;
+
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class LibraryManagementSystem {
@@ -19,20 +23,10 @@ public class LibraryManagementSystem {
         return scanner.nextInt();
     }
 
-    private static boolean registerUser() {
-        System.out.println("Registration:");
-        System.out.print("Enter your username: ");
-        String username = scanner.nextLine();
-        System.out.print("Enter your password: ");
-        String password = scanner.nextLine();
 
-        // TODO: Perform registration logic (e.g., store user credentials in a database/file)
 
-        System.out.println("Registration successful!");
-        return true;
-    }
-
-    private static void displayMainMenu() {
+    public static void displayMainMenu() throws IOException {
+        Register_users register_users = new Register_users();
         System.out.println("\nMain Menu:");
         System.out.println("1. Add Book");
         System.out.println("2. Borrow Book");
@@ -45,6 +39,7 @@ public class LibraryManagementSystem {
         switch (choice) {
             case 1:
                 // TODO: Implement add book functionality
+                register_users.Enter_book_detail();
                 break;
             case 2:
                 // TODO: Implement borrow book functionality
