@@ -1,6 +1,7 @@
 package Utility_package_for_comman_use;
 
 
+import Read_write_file.Library_Book_list;
 import Read_write_file.Register_users;
 
 
@@ -32,7 +33,8 @@ public class LibraryManagementSystem {
         System.out.println("2. Borrow Book");
         System.out.println("3. Return Book");
         System.out.println("4. Search Books");
-        System.out.println("5. Exit");
+        System.out.println("5. Book List");
+        System.out.println("6. Exit");
         System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
 
@@ -49,6 +51,51 @@ public class LibraryManagementSystem {
                 break;
             case 4:
                 // TODO: Implement search books functionality
+                Search_Book_By();
+                break;
+            case 5:
+            {
+                Library_Book_list library_book_list=new Library_Book_list();
+                library_book_list.Book_list();
+                break;
+            }
+            case 6:
+                System.out.println("Exiting the program. Goodbye!");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again.");
+                displayMainMenu();
+        }
+    }
+
+
+    public static void Search_Book_By() throws IOException {
+        Library_Book_list library_book_list=new Library_Book_list();
+        System.out.println("\nSearch_Book_By:");
+        System.out.println("1. Book title:");
+        System.out.println("2. Author:");
+        System.out.println("3. ISBN:");
+        System.out.println("4. Genre:");
+        System.out.println("5. Exit:");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println("Enter Book title:");
+                library_book_list.Search_Book(0,scanner.next());
+                break;
+            case 2:
+                System.out.println("Enter Author Name:");
+                library_book_list.Search_Book(1,scanner.next());
+                break;
+            case 3:
+                System.out.println("Enter ISBN:");
+                library_book_list.Search_Book(2,scanner.next());
+                break;
+            case 4:
+                System.out.println("Enter Genre:");
+                library_book_list.Search_Book(3,scanner.next());
                 break;
             case 5:
                 System.out.println("Exiting the program. Goodbye!");
@@ -58,6 +105,12 @@ public class LibraryManagementSystem {
                 System.out.println("Invalid choice. Please try again.");
                 displayMainMenu();
         }
+
+
+
+
     }
+
+
 }
 
