@@ -64,9 +64,9 @@ public class Library_Book_list {
             for (int c = 0; c < cols; c++) // Second for loop representing the column.
             {
                 XSSFCell cell = row.getCell(c); // Accessing the column one by one.
-                XSSFCell gender = row.getCell(cell_number); // This line is used for accessing the gender column.
-                String g = gender.getStringCellValue(); // Assign the gender value in local variable so we can compare.
-                if (g.toLowerCase().equals(Search_text.toLowerCase()) || r == 0) {  // r == 0 is used for to print the first line from csv.
+                XSSFCell cell_value = row.getCell(cell_number); // This line is used for accessing the same column with the help of index value.
+                String cell_text = cell_value.getStringCellValue(); // Assign the cell value in local variable so we can compare.
+                if (cell_text.toLowerCase().equals(Search_text.toLowerCase()) || r == 0) {  // r == 0 is used for to print the first line from csv.
                     switch (cell.getCellType()) {
                         case STRING: { // This switch case will execute when the cell data is string.
                             System.out.print(cell.getStringCellValue() + " | ");

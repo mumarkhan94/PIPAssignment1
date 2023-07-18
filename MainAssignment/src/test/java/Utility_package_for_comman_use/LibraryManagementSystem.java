@@ -1,6 +1,8 @@
 package Utility_package_for_comman_use;
 
 
+import Login_and_register.Comman_variable;
+import Read_write_file.Barrow_and_return;
 import Read_write_file.Library_Book_list;
 import Read_write_file.Register_users;
 
@@ -28,6 +30,7 @@ public class LibraryManagementSystem {
 
     public static void displayMainMenu() throws IOException {
         Register_users register_users = new Register_users();
+        Barrow_and_return barrow_and_return = new Barrow_and_return();
         System.out.println("\nMain Menu:");
         System.out.println("1. Add Book");
         System.out.println("2. Borrow Book");
@@ -43,8 +46,11 @@ public class LibraryManagementSystem {
                 // TODO: Implement add book functionality
                 register_users.Enter_book_detail();
                 break;
-            case 2:
-                // TODO: Implement borrow book functionality
+            case 2: {// TODO: Implement borrow book functionality
+                barrow_and_return.Barrow_and_Returns(-1);
+                barrow_and_return.Add_Barrow_Book_details(Comman_variable.Username,Comman_variable.Book_name,Comman_variable.Isbn);
+
+            }
                 break;
             case 3:
                 // TODO: Implement return book functionality

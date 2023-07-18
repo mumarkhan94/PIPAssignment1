@@ -32,6 +32,7 @@ public class User_Interface {
 //                    System.out.println(users.Login("Maazalam" ,"1234567"));
 //                    System.out.println(users.Login("armanalam" ,"alma98"));
 //                    int user_status = users.Login("armanalam" ,"alma98");
+                    Comman_variable.Username="armanalam";
                     switch (users.Login("armanalam" ,"alma98")) {
                         case 1:{
                             System.out.println("Login successful!");
