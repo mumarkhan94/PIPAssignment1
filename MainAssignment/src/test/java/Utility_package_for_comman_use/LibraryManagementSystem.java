@@ -28,7 +28,7 @@ public class LibraryManagementSystem {
 
 
 
-    public static void displayMainMenu() throws IOException {
+    public static void displayMainMenu_for_staff() throws IOException {
         Register_users register_users = new Register_users();
         Barrow_and_return barrow_and_return = new Barrow_and_return();
         System.out.println("\nMain Menu:");
@@ -49,14 +49,19 @@ public class LibraryManagementSystem {
             case 2: {// TODO: Implement borrow book functionality
                 barrow_and_return.Barrow_and_Returns(-1);
                 barrow_and_return.Add_Barrow_Book_details(Comman_variable.Username,Comman_variable.Book_name,Comman_variable.Isbn);
+            }
+                break;
+            case 3:{
+                // TODO: Implement return book functionality
+                barrow_and_return.Barrow_and_Returns(1);
+                if(barrow_and_return.Delete_row()==1)
+                    System.out.println("Book Submitted Successfully.");
+                else
+                    System.out.println("Book not Submitted.");
 
             }
                 break;
-            case 3:
-                // TODO: Implement return book functionality
-                break;
             case 4:
-                // TODO: Implement search books functionality
                 Search_Book_By();
                 break;
             case 5:
@@ -71,9 +76,59 @@ public class LibraryManagementSystem {
                 break;
             default:
                 System.out.println("Invalid choice. Please try again.");
-                displayMainMenu();
+                displayMainMenu_for_staff();
         }
     }
+
+
+    public static void displayMainMenu_for_student() throws IOException {
+        Register_users register_users = new Register_users();
+        Barrow_and_return barrow_and_return = new Barrow_and_return();
+        System.out.println("\nMain Menu:");
+        System.out.println("1. Borrow Book");
+        System.out.println("2. Return Book");
+        System.out.println("3. Search Books");
+        System.out.println("4. Book List");
+        System.out.println("5. Exit");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1: {// TODO: Implement borrow book functionality
+                barrow_and_return.Barrow_and_Returns(-1);
+                barrow_and_return.Add_Barrow_Book_details(Comman_variable.Username,Comman_variable.Book_name,Comman_variable.Isbn);
+            }
+            break;
+            case 2:{
+                // TODO: Implement return book functionality
+                barrow_and_return.Barrow_and_Returns(1);
+                if(barrow_and_return.Delete_row()==1)
+                    System.out.println("Book Submitted Successfully.");
+                else
+                    System.out.println("Book not Submitted.");
+
+            }
+            break;
+            case 3:
+                Search_Book_By();
+                break;
+            case 4:
+            {
+                Library_Book_list library_book_list=new Library_Book_list();
+                library_book_list.Book_list();
+                break;
+            }
+            case 5:
+                System.out.println("Exiting the program. Goodbye!");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again.");
+                displayMainMenu_for_student();
+        }
+    }
+
+
 
 
     public static void Search_Book_By() throws IOException {
@@ -109,7 +164,7 @@ public class LibraryManagementSystem {
                 break;
             default:
                 System.out.println("Invalid choice. Please try again.");
-                displayMainMenu();
+                Search_Book_By();
         }
 
 

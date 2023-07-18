@@ -41,7 +41,7 @@ public class Register_users {
         FileOutputStream os = new FileOutputStream(myFile);
         workbook.write(os);  // Write the data in sheet.
         inputStream.close(); // close the sheet.
-        System.out.println("Data inserted");
+        System.out.println("Database is updated.");
     }
 
     public void registerUser() throws IOException {
