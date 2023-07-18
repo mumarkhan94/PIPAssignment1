@@ -44,16 +44,17 @@ public class LibraryManagementSystem {
         switch (choice) {
             case 1:
                 // TODO: Implement add book functionality
-                register_users.Enter_book_detail();
+                register_users.Enter_book_detail(); //This method is used to add the book detail in xlsx file.
                 break;
             case 2: {// TODO: Implement borrow book functionality
-                barrow_and_return.Barrow_and_Returns(-1);
+                barrow_and_return.Barrow_and_Returns(-1); //This method is used to barrow the book and it will update the book quantity.
+               // this method is used to add borrower details in file.
                 barrow_and_return.Add_Barrow_Book_details(Comman_variable.Username,Comman_variable.Book_name,Comman_variable.Isbn);
             }
                 break;
             case 3:{
                 // TODO: Implement return book functionality
-                barrow_and_return.Barrow_and_Returns(1);
+                barrow_and_return.Barrow_and_Returns(1); // This method return one if book is submitted.
                 if(barrow_and_return.Delete_row()==1)
                     System.out.println("Book Submitted Successfully.");
                 else
@@ -62,12 +63,12 @@ public class LibraryManagementSystem {
             }
                 break;
             case 4:
-                Search_Book_By();
+                Search_Book_By(); // This method is used to search the book by Book_title, Author, ISBN, Genre.
                 break;
             case 5:
             {
                 Library_Book_list library_book_list=new Library_Book_list();
-                library_book_list.Book_list();
+                library_book_list.Book_list(); // This method is used to print the book list.
                 break;
             }
             case 6:

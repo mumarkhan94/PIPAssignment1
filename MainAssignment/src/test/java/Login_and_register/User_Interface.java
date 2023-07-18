@@ -12,7 +12,6 @@ public class User_Interface {
 
 
     public static void main(String[] args) throws IOException {
-        // This method is use to enter the data into file.
 
         LibraryManagementSystem libraryManagementSystem = new LibraryManagementSystem();
         libraryManagementSystem.displayWelcomeMessage();
@@ -31,13 +30,13 @@ public class User_Interface {
                         case 1: {
                             System.out.println("Login successful! User role is Student");
                             isLoggedIn = true;
-                            while (isLoggedIn)
+                            while (isLoggedIn) // This switch case is use for student.
                                 libraryManagementSystem.displayMainMenu_for_student();
                             break;
                         }
                         case 2: {
                             System.out.println("Login successful! User role is Staff");
-                            isLoggedIn = true;
+                            isLoggedIn = true;// This switch case is used for Staff.
                             while (isLoggedIn)
                                 libraryManagementSystem.displayMainMenu_for_staff();
                             break;
@@ -49,7 +48,7 @@ public class User_Interface {
                     break;
                 }
                 case 2: {
-                    register_users.registerUser();
+                    register_users.registerUser(); // This method is used for Registration.
                     System.out.println("Registration successful!");
                     break;
                 }

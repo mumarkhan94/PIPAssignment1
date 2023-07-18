@@ -37,7 +37,7 @@ public class Library_Book_list {
                     }
                     case NUMERIC: // This switch case will execute when the cell data is integer.
                     {   if(cell.getNumericCellValue()==0.0)
-                        System.out.print("Unavailable Book");
+                        System.out.print("Unavailable Book"); // If cell value is zero then it will print unavailable.
                         else
                         System.out.print(cell.getNumericCellValue() + " | ");
                         break;}
