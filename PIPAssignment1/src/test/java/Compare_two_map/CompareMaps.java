@@ -20,6 +20,8 @@ public class CompareMaps {
         map2.put("d", "dog");
 
         compareMaps(map1, map2);
+
+
     }
 
     public static void compareMaps(Map<String, String> map1, Map<String, String> map2) {
@@ -27,6 +29,7 @@ public class CompareMaps {
         for (Map.Entry<String, String> entry : map1.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
+
 
             // Check if map2 does not contain the key or the values are different
             if (!map2.containsKey(key) || !map2.get(key).equals(value)) {

@@ -20,6 +20,10 @@ public class Find_non_repeating_integer {
 	                System.out.println(current);
 	            }
 	        }
+
+
+
+
 	    }
 	
 	public static void main(String[] args) {
