@@ -59,7 +59,7 @@ public class HomePageEvents {
 		return flag;
 	}
 
-	public void search_user(ExtentTest test, String username ,WebDriver driver,String follow) throws InterruptedException {
+	public void follow_unfollow(ExtentTest test, String username ,WebDriver driver,String follow) throws InterruptedException {
 		ele.getWebElement("XPATH",HomePageElements.Search_box).sendKeys(username);
 		ele.getWebElement("XPATH",HomePageElements.Search_box).sendKeys(Keys.ENTER);
 		ele.getWebElement("XPATH",HomePageElements.People).click();

@@ -19,10 +19,10 @@ public class Testcase3 extends BaseTest {
 
     @Test
     public void Follow_Unfollow() throws InterruptedException {
-        test = extent.createTest("Test Case 1 Tweet Creation");
+        test = extent.createTest("Test Case 1 Follow and unfollow");
         ele.Login(test);
-        hpe.search_user(test,Constants.Search_User,driver,"follow");
-        hpe.search_user(test,Constants.Search_User,driver,"unfollow");
+        hpe.follow_unfollow(test,Constants.Search_User,driver,"follow");
+        hpe.follow_unfollow(test,Constants.Search_User,driver,"unfollow");
 
     }
 }
