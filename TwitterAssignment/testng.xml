@@ -4,8 +4,16 @@
 
   <test thread-count="5" name="Test">
     <parameter name="browser" value="chrome"></parameter>
+    <!-- <parameter name="browser" value="chrome_head_less"></parameter> -->
     <classes>
-      <class name="QA.TestNG.Testcase3"></class>
+      <class name="QA.TestNG.TestCase1"></class>
+      <class name="QA.TestNG.Testcase2"></class>
+      <class name="QA.TestNG.TestCase3"></class>
+      <class name="QA.TestNG.Testcase4"></class>
+      <class name="QA.TestNG.TestCase5"></class>
+      <class name="QA.TestNG.TestCase6"></class>
+      <class name="QA.TestNG.TestCase7"></class>
+      <class name="QA.TestNG.TestCase8"></class>
 
     </classes>
   </test> <!-- Test -->

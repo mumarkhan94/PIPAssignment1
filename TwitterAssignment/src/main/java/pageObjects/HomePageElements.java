@@ -17,6 +17,13 @@ public interface HomePageElements {
     String follow_button = "//div[@data-testid=\"1682986005790617606-follow\"]";
     String unfollow_Button = "//div[@data-testid=\"1682986005790617606-unfollow\"]";
     String unfollow_confirm ="//div[@data-testid=\"confirmationSheetConfirm\"]";
+    String Latest = "(//div[@role=\"presentation\"])[3]";
+    String Side_Search = "//a[@data-testid=\"AppTabBar_Explore_Link\"]";
+    String trending_button = "//a[@href=\"/explore/tabs/trending\"]";
+    String trending_topic = "(//span[@class=\"r-18u37iz\"])[1]";
+    String trending_topic_count = "//div[@data-testid='trend']";
+
+
 
 
 

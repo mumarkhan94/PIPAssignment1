@@ -13,6 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -51,7 +52,7 @@ public class BaseTest {
         setupDriver(browser);
         driver.manage().window().maximize(); // This line is used to maximize the window.
         driver.get(Constants.url); // This will get url address from utils/constants.java.
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20000));  // Its will wait 20 seconds for elements visible.
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // Its will wait 20 seconds for elements visible.
 
     }
 
@@ -112,10 +113,15 @@ public class BaseTest {
 
 
     public void setupDriver(String browser) {
-        System.out.println("Browsercode");
-        if (browser.equalsIgnoreCase("chrome")) {
+        System.out.println("Browser code");
+        if(browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver();}
+        else if(browser.equalsIgnoreCase("chrome_head_less")) {
+            ChromeOptions opt =new ChromeOptions();
+            opt.setHeadless(true);
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(opt);
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
