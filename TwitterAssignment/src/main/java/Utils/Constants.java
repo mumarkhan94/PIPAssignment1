@@ -9,7 +9,6 @@ public interface Constants {
 //	String Password = "Umarkhan.up";
 
 	String Username = "umarkhan94516";
-	String Password = "Hena@9451671841";
-	String Search_User = "@updarkshadow";
+	
 
 }
