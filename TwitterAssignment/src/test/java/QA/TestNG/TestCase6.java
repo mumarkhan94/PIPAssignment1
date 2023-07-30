@@ -21,7 +21,7 @@ public class TestCase6 extends BaseTest {
     @Test
     public void Send_and_recive() throws InterruptedException {
         test = extent.createTest("Test Case 1 Hashtag verification");
-        ele.Login(test);
+        ele.Login(test,"khankhan94516","Umarkhan.up");
         String check_send_message=mpe.Send(test,"hello world",driver,"@updarkshadow");
         ele.logout(test);
         ele.Login(test,"updarkshadow","Umarkhan.up");

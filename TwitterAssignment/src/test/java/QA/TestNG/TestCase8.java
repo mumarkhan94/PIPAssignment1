@@ -23,4 +23,11 @@ public class TestCase8 extends BaseTest {
         hpe.Hashtag_Navigation(test, driver);
 
     }
+    @Test
+    public void Hashtag1() throws InterruptedException {
+        test = extent.createTest("Test Case 1 Hashtag verification");
+        ele.Login(test);
+        hpe.Hashtag_Navigation(test, driver);
+
+    }
 }

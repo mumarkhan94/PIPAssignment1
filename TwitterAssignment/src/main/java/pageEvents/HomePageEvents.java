@@ -28,7 +28,7 @@ public class HomePageEvents {
 		test.log(Status.INFO, MarkupHelper.createLabel("Post message is entered ", ExtentColor.GREEN));
 		ele.getWebElement("XPATH", HomePageElements.Post_Buttton).click();
 		test.log(Status.INFO, MarkupHelper.createLabel("Post button is clicked ", ExtentColor.GREEN));
-		ele.getWebElement("XPATH", HomePageElements.close_post_success_button).click();
+//		ele.getWebElement("XPATH", HomePageElements.close_post_success_button).click();
 	}
 
 	public boolean VerifyPost(ExtentTest test, String message, WebDriver driver) throws InterruptedException {

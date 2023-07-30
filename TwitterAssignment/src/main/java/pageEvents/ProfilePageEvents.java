@@ -33,7 +33,7 @@ public class ProfilePageEvents {
         ele.getWebElement("XPATH", ProfilePageElements.retweet_element).click();
         ele.getWebElement("XPATH",ProfilePageElements.retweet_confirm).click();
         ele.getWebElement("XPATH",HomePageElements.Profile_button).click();
-        ele.getWebElement("XPATH",ProfilePageElements.close_buuton).click();
+//        ele.getWebElement("XPATH",ProfilePageElements.close_buuton).click();
         test.log(Status.INFO,MarkupHelper.createLabel("Latest tweet is retweeted and clicked on profile button.",ExtentColor.GREEN));
 
 // Validating retweeted tweet is displaying or not in users profile.
